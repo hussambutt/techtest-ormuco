@@ -1,0 +1,7 @@
+git_repo: https://github.com/hussambutt/techtest-ormuco.git
+git_branch: init
+project_path: /srv/apps/techtest-ormuco
+
+virtualenv_path: /srv/apps/virtualenvs/testwebsite
+
+django_settings_file: {{ project_path }}/testwebsite/testwebsite/settings.py

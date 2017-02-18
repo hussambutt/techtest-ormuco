@@ -1,0 +1,4 @@
+- name: install nginx
+  apt: name={{ item }}  state=present force=yes update_cache=yes
+  with_items:
+    - nginx

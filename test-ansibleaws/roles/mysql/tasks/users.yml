@@ -1,0 +1,5 @@
+- mysql_user:
+    name: django
+    password: '{{ mysql_pass }}'
+    priv: '*.*:ALL'
+    state: present
