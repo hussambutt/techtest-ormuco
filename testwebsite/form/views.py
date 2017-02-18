@@ -34,13 +34,17 @@ def home(request):
     form = DetailsModelForm(request.POST or None)
     if form.is_valid():
         new_join = form.save(commit=False)
-        #Do eomthing here if required
-        name = form.cleaned_data['name']
-        color= form.cleaned_data['favorite_color']
-        animal= form.cleaned_data['cats_or_dogs']
+        # Do somthing here if required
+        #
+        # name = form.cleaned_data['name']
+        # color = form.cleaned_data['favorite_color']
+        # animal = form.cleaned_data['cats_or_dogs']
+        #
+        # add_details, created = List.objects.get_or_create(name=name, favorite_color=color, cats_or_dogs=animal)
 
-        add_details, created = List.objects.get_or_create(name=name, favorite_color=color, cats_or_dogs=animal)
-        print add_details
+        new_join.save()
+        # If form data is submitted, reset the form
+        form = DetailsModelForm()
 
     template = 'form/index.html'
     context = {"form": form}
