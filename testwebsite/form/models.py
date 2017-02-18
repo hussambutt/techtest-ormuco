@@ -11,7 +11,7 @@ from django_extensions.db.models import TimeStampedModel
 #    cats_or_dogs = models.CharField(max_length=250, verbose_name="Cats or Dogs?")
 
 class List(TimeStampedModel):
-    name = models.CharField(max_length=250, verbose_name="Name")
+    name = models.CharField(max_length=250, verbose_name="Name", unique=True)
     favorite_color = models.CharField(max_length=250, verbose_name="Favorite Color")
     cats_or_dogs = models.CharField(max_length=250, verbose_name="Cats or Dogs?")
 

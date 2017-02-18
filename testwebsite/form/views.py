@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 
-from .apps import DetailsForm
+from .apps import DetailsForm, DetailsModelForm
 
 from .models import List
 # Create your views here.
@@ -17,6 +17,9 @@ def detail(request):
 
 def home(request):
     #print request.POST["Name1"], request.POST["Color1"], request.POST["Animal1"]
+
+
+    #DetailsForm App
     # detailform = DetailsForm(request.POST or None)
     #
     # if detailform.is_valid():
@@ -27,8 +30,18 @@ def home(request):
     #     new_data, created = List.objects.get_or_create(name=name, favorite_color=color, cats_or_dogs=animal)
     #     print new_data, created
 
+    #DetailsModelFOrm App
+    form = DetailsModelForm(request.POST or None)
+    if form.is_valid():
+        new_join = form.save(commit=False)
+        #Do eomthing here if required
+        name = form.cleaned_data['name']
+        color= form.cleaned_data['favorite_color']
+        animal= form.cleaned_data['cats_or_dogs']
 
+        add_details, created = List.objects.get_or_create(name=name, favorite_color=color, cats_or_dogs=animal)
+        print add_details
 
     template = 'form/index.html'
-    context = {"form": detailform}
+    context = {"form": form}
     return render(request, template, context)
