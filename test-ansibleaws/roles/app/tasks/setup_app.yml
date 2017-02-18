@@ -4,7 +4,7 @@
 - name: Run the Django syncdb command
   django_manage:
     command: syncdb
-    app_path: "{{ project_path }}"
+    app_path: "{{ manage_path }}"
     virtualenv: "{{ virtualenv_path }}"
     settings: "{{ django_settings_file }}"
   #environment: "{{ django_environment }}"
@@ -12,7 +12,7 @@
 - name: Run Django database migrations
   django_manage:
     command: migrate
-    app_path: "{{ project_path }}"
+    app_path: "{{ manage_path }}"
     virtualenv: "{{ virtualenv_path }}"
     settings: "{{ django_settings_file }}"
   #environment: "{{ django_environment }}"

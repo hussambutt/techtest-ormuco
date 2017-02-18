@@ -5,6 +5,7 @@
        version={{ git_branch }}
        dest={{ project_path }}
        accept_hostkey=yes
+       force=yes
 
 - name: Delete all .pyc files
   command: find . -name '*.pyc' -delete

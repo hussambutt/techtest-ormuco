@@ -4,4 +4,4 @@
   command: virtualenv {{ virtualenv_path }}
            creates={{ virtualenv_path }}/bin/activate
 
-- include: setup_app.yml.yml
+- include: setup_app.yml
