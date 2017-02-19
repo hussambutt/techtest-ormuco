@@ -1,0 +1,11 @@
+- name: install uwsgi
+  pip: name={{ item }}
+  with_items:
+    - uwsgi
+
+- name: production template moved to remote host
+  template: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+      - { "src": "uwsgi.ini", "dest": "{{ project_path }}/testwebsite/uwsgi.ini" }
+      - { "src": "uwsgi_startup_script", "dest": "/etc/systemd/system/uwsgi.service" }
+  notify: start uwsgi

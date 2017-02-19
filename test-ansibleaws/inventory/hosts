@@ -2,4 +2,4 @@
 localhost
 
 [webserver]
-ec2-52-60-140-4.ca-central-1.compute.amazonaws.com ansible_ssh_user=ubuntu ansible_python_interpreter=/usr/bin/python3
+ec2-52-60-138-205.ca-central-1.compute.amazonaws.com ansible_ssh_user=ubuntu

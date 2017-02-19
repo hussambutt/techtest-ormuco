@@ -26,3 +26,4 @@
     app_path: "{{ manage_path }}"
     virtualenv: "{{ virtualenv_path }}"
 #    settings: "{{ django_settings_file }}"
+
