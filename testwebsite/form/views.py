@@ -12,7 +12,7 @@ def index(request):
     return HttpResponse("<h1>Still working on it</h1>")
 
 def detail(request):
-    template = loader.get_template('form/index.html')
+    template = loader.get_template('form/test.html')
     return HttpResponse(template.render(request))
 
 def home(request):
