@@ -34,7 +34,7 @@ def home(request):
     form = DetailsModelForm(request.POST or None)
     if form.is_valid():
         new_join = form.save(commit=False)
-        # Do somthing here if required
+        # Do something here if required
         #
         # name = form.cleaned_data['name']
         # color = form.cleaned_data['favorite_color']

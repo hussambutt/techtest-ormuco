@@ -1,2 +1,5 @@
-- name: start uwsgi
-  systemd: state=started name=uwsgi.service
+- name: restart uwsgi
+  systemd: state=restarted enabled=yesname=uwsgi.service
+
+#- name: enable uwsgi
+#  systemd: state=enabled name=uwsgi.service
