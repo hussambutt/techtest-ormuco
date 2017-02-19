@@ -3,7 +3,10 @@ mysql_pass: 12345
 mysql_user: django
 mysql_db: testwebsite
 
+# Repository for you application
 git_repo: https://github.com/hussambutt/techtest-ormuco.git
 git_branch: init
 
+# Paths for your django app
 project_path: /srv/apps/techtest-ormuco
+manage_path: /srv/apps/techtest-ormuco/testwebsite

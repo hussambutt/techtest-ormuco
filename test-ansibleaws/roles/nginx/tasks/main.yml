@@ -7,4 +7,11 @@
   template: src={{ item.src }} dest={{ item.dest }}
   with_items:
       - { "src": "uwsgi_params", "dest": "/etc/nginx/uwsgi_params" }
-      - { "src": "site.conf", "dest": "/etc/nginx/sites-enabled/site.conf" }
+      - { "src": "site.conf", "dest": "/etc/nginx/site.conf" }
+  notify: reload nginx
+
+- name: nginx templates softlink
+  file: src={{ item.src }} dest={{ item.dest }} state=link
+  with_items:
+      - { "src": "/etc/nginx/site.conf", "dest": "/etc/nginx/sites-enabled/site.conf" }
+  notify: restart nginx

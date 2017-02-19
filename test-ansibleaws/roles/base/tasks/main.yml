@@ -18,7 +18,7 @@
     - libpq-dev
     - libmysqlclient-dev # required to install pip package 'mysqlclient' in mysql role
     - python-dev
-    - python3-pip
+    - python-pip
     - python-pycurl
     - ipython
 
