@@ -89,6 +89,9 @@
     roles:
       - base
       - mysql
-      - nginx
-      #- certbot
       - app
+      #- certbot
+      - nginx
+    vars_files:
+        - env_vars/base.yml
+

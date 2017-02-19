@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%8*&*8n86qjdr#rxo9g38*u)i5_t593yifr!fp_lo_(i-5v&0o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'testwebsite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'testwebsite',
-        'USER': 'django',
-        'PASSWORD': '12345',
+        'NAME': '{{ mysql_db }}',
+        'USER': '{{ mysql_user }}',
+        'PASSWORD': '{{ mysql_pass }}',
         'HOST': 'localhost',
         'PORT': '',
     }

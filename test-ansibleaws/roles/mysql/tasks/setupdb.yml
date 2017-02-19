@@ -1,10 +1,10 @@
 - mysql_user:
-    name: django
+    name: '{{ mysql_user }}'
     password: '{{ mysql_pass }}'
     priv: '*.*:ALL'
     state: present
 
 - name: Create a new database
   mysql_db:
-    name: testwebsite
+    name: '{{ mysql_db }}'
     state: present

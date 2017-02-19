@@ -1,18 +1,28 @@
+- name: production template moved to remote host
+  template: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+      - { "src": "production.j2", "dest": "{{ project_path }}/testwebsite/testwebsite/settings/production.py" }
+
 - name: Install packages required by the Django app inside virtualenv
   pip: virtualenv={{ virtualenv_path }} requirements='{{ project_path }}/requirements.txt'
 
-- name: Run the Django syncdb command
+- name: Run the Django makemigrations command
   django_manage:
-    command: syncdb
+    command: makemigrations
     app_path: "{{ manage_path }}"
     virtualenv: "{{ virtualenv_path }}"
-    settings: "{{ django_settings_file }}"
-  #environment: "{{ django_environment }}"
+#    settings: "{{ django_settings_file }}"
 
 - name: Run Django database migrations
   django_manage:
     command: migrate
     app_path: "{{ manage_path }}"
     virtualenv: "{{ virtualenv_path }}"
-    settings: "{{ django_settings_file }}"
-  #environment: "{{ django_environment }}"
+#    settings: "{{ django_settings_file }}"
+
+- name: Run Django collectstatic
+  django_manage:
+    command: collectstatic
+    app_path: "{{ manage_path }}"
+    virtualenv: "{{ virtualenv_path }}"
+#    settings: "{{ django_settings_file }}"
