@@ -107,7 +107,7 @@
       - base
       - mysql
       - app
-      #- certbot
+      - certbot
       - nginx
     vars_files:
         - env_vars/base.yml

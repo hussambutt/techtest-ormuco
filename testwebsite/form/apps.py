@@ -4,6 +4,8 @@ from django.apps import AppConfig
 
 from django import forms
 
+from django.utils.translation import ugettext_lazy as _
+
 from .models import List
 
 class FormConfig(AppConfig):
@@ -18,3 +20,14 @@ class DetailsModelForm(forms.ModelForm):
     class Meta:
         model = List
         fields = '__all__'
+        # labels = {
+        #     'name': _('Writer'),
+        # }
+        # help_texts = {
+        #     'name': _('Some useful help text.'),
+        # }
+        error_messages = {
+            'name': {
+                'unique': _("Name already exists in our database."),
+            },
+        }

@@ -3,4 +3,4 @@
 certbot_auto_renew: yes
 certbot_admin_email: hussambutt@gmail.com
 certbot_script: /opt/certbot-auto
-certbot_output_dir: "/etc/letsencrypt/live/{{ inventory_hostname }}"
+certbot_output_dir: "/etc/letsencrypt/live/{{ cert_bot_hostname }}"

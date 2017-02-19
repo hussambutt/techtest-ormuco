@@ -8,4 +8,4 @@
   with_items:
       - { "src": "uwsgi.ini", "dest": "{{ project_path }}/testwebsite/uwsgi.ini" }
       - { "src": "uwsgi_startup_script", "dest": "/etc/systemd/system/uwsgi.service" }
-  notify: start uwsgi
+  notify: restart uwsgi
