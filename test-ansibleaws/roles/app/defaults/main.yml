@@ -1,0 +1,3 @@
+manage_path: /srv/apps/techtest-ormuco/testwebsite
+
+virtualenv_path: /srv/apps/virtualenvs/testwebsite

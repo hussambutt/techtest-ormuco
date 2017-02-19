@@ -1,0 +1,10 @@
+- name: install nginx
+  apt: name={{ item }}  state=present force=yes update_cache=yes
+  with_items:
+    - nginx
+
+- name: nginx templates moved to remote host
+  template: src={{ item.src }} dest={{ item.dest }}
+  with_items:
+      - { "src": "uwsgi_params", "dest": "/etc/nginx/uwsgi_params" }
+      - { "src": "site.conf", "dest": "/etc/nginx/sites-enabled/site.conf" }

@@ -1,0 +1,9 @@
+# Database credentials for prod environment
+mysql_pass: 12345
+mysql_user: django
+mysql_db: testwebsite
+
+git_repo: https://github.com/hussambutt/techtest-ormuco.git
+git_branch: init
+
+project_path: /srv/apps/techtest-ormuco
