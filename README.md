@@ -8,6 +8,7 @@ The playbook will bring up a t2.micro instance on AWS and deploy the django appl
 Currently in the ec2.yml and under env_var/base.yml there a variables at the start of the file which should be changed
 to match the users's preference. The following from inside the repo will bring up and instance with the app:
 
+cd test-ansibleaws
 ansible-playbook -i inventory/hosts playbooks/ec2.yml
 
 The app once deployed can be reached on the url specified as the variable "record" under the ec2.yml file. The variable
