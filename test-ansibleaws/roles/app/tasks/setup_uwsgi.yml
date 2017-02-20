@@ -8,4 +8,7 @@
   with_items:
       - { "src": "uwsgi.ini", "dest": "{{ project_path }}/testwebsite/uwsgi.ini" }
       - { "src": "uwsgi_startup_script", "dest": "/etc/systemd/system/uwsgi.service" }
-  notify: restart uwsgi
+  notify: start uwsgi
+
+- name: make sure uwsgi service ie snabled
+  systemd: enabled=yes name=uwsgi.service
