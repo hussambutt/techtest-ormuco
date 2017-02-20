@@ -12,12 +12,12 @@ to match the users's preference.
 
 Min changes required to run:
 
-Under playbooks/ec2.yml:
-      keypair: # Keypair name
-      zone: # Zone name
-      record: # Record name under zone
+Under playbooks/ec2.yml<br />
+      keypair: # Keypair name<br />
+      zone: # Zone name<br />
+      record: # Record name under zone<br />
 
-Under env_vars/base.yml:
+Under env_vars/base.yml<br />
     cert_bot_hostname: # something.com
 
 The following from inside the repo will bring up and instance with the app:
